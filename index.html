@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Une question pour toi...</title>
+
+  <!-- Polices Google Fonts : une manuscrite élégante pour l'émotion, une lisible pour le confort -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fond étoilé décoratif (généré en CSS, voir style.css) -->
+  <div class="stars"></div>
+  <div class="stars stars--small"></div>
+
+  <!-- ============================================= -->
+  <!-- PAGE 1 : L'INVITATION                          -->
+  <!-- ============================================= -->
+  <main id="invitation-page" class="page page--active">
+    <div class="content">
+
+      <p class="eyebrow fade-in">Pour la plus belle d'entre toutes</p>
+
+      <h1 class="title fade-in delay-1">Veux-tu m'accompagner ?</h1>
+
+      <!-- Compte à rebours avant le bal -->
+      <div class="countdown fade-in delay-2" id="countdown" aria-label="Compte à rebours avant le bal">
+        <div class="time-block">
+          <span class="time-number" id="days">00</span>
+          <span class="time-label">Jours</span>
+        </div>
+        <div class="time-block">
+          <span class="time-number" id="hours">00</span>
+          <span class="time-label">Heures</span>
+        </div>
+        <div class="time-block">
+          <span class="time-number" id="minutes">00</span>
+          <span class="time-label">Minutes</span>
+        </div>
+        <div class="time-block">
+          <span class="time-number" id="seconds">00</span>
+          <span class="time-label">Secondes</span>
+        </div>
+      </div>
+
+      <h2 class="question fade-in delay-3">
+        Accepterais-tu de m'accompagner<br>
+        lors de ce bal de fin d'année&nbsp;?
+      </h2>
+
+      <!-- Zone des boutons : le bouton "Non" est positionné en absolute dès qu'il bouge -->
+      <div class="buttons-container fade-in delay-4" id="buttons-container">
+        <button id="yes-btn" class="btn btn--yes" type="button">Oui</button>
+        <button id="no-btn" class="btn btn--no" type="button">Non</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============================================= -->
+  <!-- PAGE 2 : LA CONFIRMATION                       -->
+  <!-- ============================================= -->
+  <main id="confirmation-page" class="page">
+
+    <!-- Canvas sur lequel les confettis sont dessinés en JS -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="content">
+      <p class="eyebrow fade-in">C'est un</p>
+      <h1 class="title fade-in delay-1">Oui&nbsp;! 🎉</h1>
+      <p class="subtitle fade-in delay-2">
+        Une petite surprise t'attend juste en dessous...
+      </p>
+
+      <!-- L'enveloppe : cliquable, s'ouvre au clic -->
+      <div class="envelope-wrapper fade-in delay-3">
+        <div id="envelope" class="envelope" tabindex="0" role="button" aria-label="Ouvrir l'enveloppe">
+
+          <!-- Le corps de la lettre, caché derrière l'enveloppe, qui glisse vers le haut à l'ouverture -->
+          <div class="envelope__letter" id="envelope-letter">
+            <p class="envelope__letter-hint">clique pour déplier</p>
+          </div>
+
+          <!-- Les éléments graphiques de l'enveloppe (faces + rabat) -->
+          <div class="envelope__back"></div>
+          <div class="envelope__flap"></div>
+          <div class="envelope__seal">❤</div>
+        </div>
+        <p class="envelope-instruction" id="envelope-instruction">Clique sur l'enveloppe</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============================================= -->
+  <!-- OVERLAY : LA LETTRE DÉPLIÉE EN GRAND           -->
+  <!-- ============================================= -->
+  <div id="letter-overlay" class="letter-overlay">
+    <div class="letter-card" id="letter-card">
+      <button id="close-letter" class="letter-close" type="button" aria-label="Fermer la lettre">×</button>
+      <div class="letter-paper">
+
+        <!--
+          ============================================================
+          ✍️  PERSONNALISE TON MOT ICI ✍️
+          Remplace le texte ci-dessous par ton propre message.
+          Tu peux utiliser plusieurs <p> pour faire des paragraphes,
+          et <br> pour des retours à la ligne.
+          ============================================================
+        -->
+        <p class="letter-text">
+          Ma plus belle,<br><br>
+          Écris ici ton mot personnel... chaque souvenir, chaque raison
+          pour laquelle tu voulais l'inviter elle, et personne d'autre.
+          <br><br>
+          Avec tout mon cœur. 🤍
+        </p>
+        <!-- ============================================================ -->
+
+        <p class="letter-signature">— Toi</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
