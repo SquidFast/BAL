@@ -405,14 +405,26 @@ button {
   inset: 0;
   z-index: 20;
   display: flex;
-  align-items: center;
+  align-items: flex-start;   /* permet le défilement sans jamais couper le haut du contenu */
   justify-content: center;
-  padding: 1.5rem;
+  padding: clamp(2rem, 6vh, 4rem) 1.5rem;
+  overflow-y: auto;          /* la lettre devient scrollable si elle dépasse la hauteur de l'écran */
   background: rgba(5, 5, 10, 0.78);
   backdrop-filter: blur(4px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-gold) transparent;
+}
+
+.letter-overlay::-webkit-scrollbar {
+  width: 8px;
+}
+
+.letter-overlay::-webkit-scrollbar-thumb {
+  background: var(--c-gold);
+  border-radius: 4px;
 }
 
 .letter-overlay.is-active {
@@ -422,8 +434,9 @@ button {
 
 .letter-card {
   position: relative;
-  max-width: 480px;
+  max-width: min(640px, 92vw); /* plus large : la lettre profite de davantage d'écran */
   width: 100%;
+  margin: auto 0;             /* centre verticalement quand le contenu tient sur l'écran */
   transform: scaleY(0.05) scaleX(0.4) rotate(-2deg);
   opacity: 0;
   transform-origin: center;
