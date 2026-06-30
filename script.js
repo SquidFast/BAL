@@ -23,11 +23,7 @@ const PHRASES_BOUTON_NON = [
   'Essaie encore !',
   'Dernière chance...',
   'Allez, dis Oui ☺',
-  "Bon d'accord, j'arrête",
-  "Ou pas !",
-  "Nan seroeux pourquoi t'as toujours pas cliqué oui ?",
-  "Tu m'aimes plus ?"
-  "ARRETE!"
+  "Bon d'accord, j'arrête"
 ];
 
 /* ==========================================================================
