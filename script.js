@@ -11,7 +11,7 @@
 
 // 📅 Date et heure du bal (format : 'AAAA-MM-JJTHH:MM:SS')
 // -> Remplace cette date par la vraie date du bal.
-const DATE_DU_BAL = new Date('2026-09-19T20:00:00');
+const DATE_DU_BAL = new Date('2026-07-03T19:30:00');
 
 // 💬 Petites phrases qui s'affichent sur le bouton "Non" à chaque fois
 // qu'il est évité. Libre à toi de les modifier.
@@ -23,7 +23,11 @@ const PHRASES_BOUTON_NON = [
   'Essaie encore !',
   'Dernière chance...',
   'Allez, dis Oui ☺',
-  "Bon d'accord, j'arrête"
+  "Bon d'accord, j'arrête",
+  "Ou pas !",
+  "Nan seroeux pourquoi t'as toujours pas cliqué oui ?",
+  "Tu m'aimes plus ?"
+  "ARRETE!"
 ];
 
 /* ==========================================================================
