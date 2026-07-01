@@ -141,6 +141,12 @@ boutonOui.addEventListener('click', () => {
   pageInvitation.classList.remove('page--active');
   pageConfirmation.classList.add('page--active');
 
+  // Le bouton "Non" a été déplacé directement dans <body> pour pouvoir fuir
+  // librement (voir deplacerBoutonNon). Il ne fait donc plus partie de la
+  // page d'invitation et resterait visible par-dessus la page de
+  // confirmation si on ne le cachait pas explicitement ici.
+  boutonNon.style.display = 'none';
+
   // On laisse la transition de fondu démarrer, puis on lance les confettis.
   setTimeout(lancerConfettis, 250);
 });
